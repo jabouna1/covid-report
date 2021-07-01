@@ -1,0 +1,5 @@
+Django version 3.1.7
+Python version 3.9.2
+Pandas 1.2.4
+Matplotlib 3.4.1
+pip install pandas

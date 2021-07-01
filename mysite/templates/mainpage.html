@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+	<head>
+		<meta charset=“UTF-8”>
+		<Title> Ohio Weekly Covid-19 Report </Title>
+		<style>
+			body {
+				
+				background: rgb(58,58,58);
+			
+			}
+			
+			.top_background {
+				
+				background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/df/Cleveland_Skyline_Aug_2006.JPG); 
+				
+				height: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				padding-top: 80px;
+				
+				
+			}
+			
+			.main_header {
+				color: white;
+				
+				font-family: Calibri;
+				font-size: 48px;
+				font-weight: bold;
+				text-align: center;
+				
+				padding: 15px;
+				background: rgb(61,64,91);
+			}
+			
+			.main_header img {
+				height: 1em;
+				width: auto;
+			}
+			
+			.date_updated {
+				padding: 5px;
+				background: rgb(129,178,154);
+				
+				font-weight: bold;
+				font-family: Calibri;
+				text-align: center;
+				font-size: 14px;
+			}
+		
+			.sub_header {
+				color: rgb(61,64,91);
+				
+				font-family: Calibri;
+				font-size: 14px;
+				font-weight: bold;
+				text-align: center;
+				
+				padding: 12px;
+				background: rgb(242,204,143);
+			
+			
+			}
+			
+			.grid {
+				
+				display: grid;
+				grid-template-columns: 500px 500px;
+				grid-template-rows: 500px 500px 500px;
+				grid-column-gap: 0px;
+				grid-row-gap: 0px;
+				
+				justify-content: center;
+				
+			
+			}
+			
+			.square1 {
+				
+				background: rgb(244,241,222);
+				background-image: url("{%static 'SeverityKey.png' %}");
+			}
+			
+			.square2 {
+				background: rgb(242,204,143);
+				background-image: url("{%static 'piechart.png' %}");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: -15px 70%;
+				color: rgb(61,64,91);
+				font-family: Calibri;
+				font-size: 20px;
+				font-weight: bold;
+				
+				padding: 30px;
+			
+			}
+				
+			
+			}
+			.vaccineMessage {
+				color: rgb(61,64,91);
+				font-style: italic;
+				font-family: Calibri;
+				font-size: 20px;
+				font-weight: bold;
+				
+				padding: 30px;
+			
+			}
+		
+			.emoji {
+				height: 2em;
+				width: auto;
+				
+			}
+			
+			.square3 {
+				background: rgb(242,204,143);
+				
+				background-image: url("{%static 'bargraph.png' %}");
+				background-size: 90%;
+				background-repeat: no-repeat;
+				background-position: 70% 50%;
+				
+				color: rgb(61,64,91);
+				font-family: Calibri;
+				font-size: 20px;
+				font-weight: bold;
+				
+				padding: 30px;
+			
+			}
+			
+			.deathMessage {
+				padding-top: 320px;
+				vertical-align: bottom;
+			
+			
+			
+			}
+			
+			.square4 {
+				background: rgb(244,241,222);
+				background-image: url("{%static 'Tips.png' %}");
+			
+			
+			}
+			
+			.square5 {
+				background: rgb(244,241,222);
+				color: rgb(61,64,91);
+				font-family: Calibri;
+				font-size: 20px;
+				font-weight: bold;
+				padding: 30px;
+			
+			}
+			
+			.square5Header {
+				text-align: center;
+				font-size: 30px;
+				padding-bottom: 60px;
+			
+			}
+			
+			.square6 {
+				background: rgb(242,204,143);
+				color: rgb(61,64,91);
+				font-family: Calibri;
+				font-size: 20px;
+				font-weight: bold;
+				padding: 30px;
+			
+			
+			
+			}
+			
+			.square6Header {
+				text-align: center;
+				font-size: 30px;
+				padding-bottom: 60px;
+			}
+			
+			.countyMessage {
+				padding: 20px;
+			
+			}
+			
+	
+		</style> 
+	
+	</head>
+
+	<body>
+		<section class="top_background" >  </section>
+		
+		<header class="main_header"> OHIO WEEKLY COVID-19 REPORT <img src="{%static 'svg/1F9A0.svg' %}"/></header>
+		<section class="date_updated"> 
+			<p1 style="color:white"> LAST UPDATED </p1>
+			<p2 style="color:rgb(255,240,0)"> {{update_Date}} </p2>
+		
+		</section>
+		
+		<header class="sub_header"> This report intends to provide information about the condition of COVID-19 to  the general public. <br> The report makes use of emojis
+		to add depth to the meaning of the statistics. The key below defines the severity of which each emoji is meant to represent.  </header>
+		
+		<section class="grid"> 
+			<div class="square1">     </div>
+			<div class="square2"> <div class="vaccineMessage"> THE <span style="color: rgb(225,128,102)" > {{vaccineVar1}} </span> OF THOSE WHO HAVE STARTED VACCINATION 
+			<span style="color: rgb(225,128,102)"> {{vaccineVar2}} COMPLETED IT</span><img src="{%static vaccineEmoji %}" class="emoji"/></div>
+			</div>
+			<div class="square3"> THERE HAS BEEN THE MOST DEATHS IN THE<span style="color: rgb(225,128,102)"> {{ageGroup}} </span>AGE GROUP<img src="{%static 'svg/1F912.svg' %}" class="emoji"/>
+			<div class="deathMessage"> THERE HAS BEEN A <span style="color: rgb(225,128,102)"> {{deathStatus1}}</span> IN DEATHS BETWEEN AGES 
+			<span style="color: rgb(225,128,102)"> {{deathStatus2}}</span> <img src="{%static deathEmoji %}" class="emoji"/> </div> </div>
+			<div class="square4">     </div>
+			<div class="square5"> <div class="square5Header"> COUNTIES TO WATCH OUT FOR... </div> <div class="countyMessage">{{countyOfCaseIncrease}}'S RATE OF CONFIRMED CASES HAVE SEEN A <span style="color: rgb(225,128,102)" >{{statusOfCaseIncrease}} OF {{percentOfCaseIncrease}}%</span><img src="{%static emojiOfCaseIncrease %}" class="emoji"/></div> 
+			<div class="countyMessage">{{countyOfDeathIncrease}}'S RATE OF DEATH HAS SEEN A <span style="color: rgb(225,128,102)" >{{statusOfDeathIncrease}} OF {{percentOfDeathIncrease}}%</span><img src="{%static emojiOfDeathIncrease %}" class="emoji"/></div></div>
+			<div class="square6"> <div class="square6Header"> ON THE BRIGHT SIDE... </div><div class="countyMessage">{{countyOfCaseDecrease}}'S RATE OF CONFIRMED CASES HAVE SEEN A <span style="color: rgb(225,128,102)" >{{statusOfCaseDecrease}} OF {{percentOfCaseDecrease}}%</span><img src="{%static emojiOfCaseDecrease %}" class="emoji"/></div> 
+			<div class="countyMessage">{{countyOfDeathDecrease}}'S RATE OF DEATH HAS SEEN A <span style="color: rgb(225,128,102)" >{{statusOfDeathDecrease}} OF {{percentOfDeathDecrease}}%</span><img src="{%static emojiOfDeathDecrease %}" class="emoji"/></div> </div>
+		
+		
+		</section>
+		
+		
+	</body>
+	
+</html>
