@@ -1,0 +1,3 @@
+# Ohio Weekly Covid Report
+
+Abstract: In the society of today where Covid-19 has run rampant, and safety practices such as wearing masks and washing hands have popularized, individuals must choose on their own to practice proper safety from the virus based on the information presented to them. The aim of this visualization is to simplify complex coronavirus data through the use of emojis so that it could be understood for the common person. This method is based upon the mainstream and universal language of emotion to be effective. It is a language that has the potential to communicate data to the younger generation more effectively than other means. 
